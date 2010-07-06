@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+
 require 'twitter'
 
 c = Twitter::Client.from_config(File.join(File.dirname(__FILE__), "account.yml"), "nomarebu")
