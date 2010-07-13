@@ -3,13 +3,12 @@
 require 'rubygems'
 require 'bundler'
 Bundler.setup
+Bundler.require :default
 
-require 'twitter'
+config = YAML.load_file(File.expand_path("../account.yml", __FILE__))["nomarebu"]
 
-config = YAML.load_file(File.join(File.dirname(__FILE__), "account.yml"))["nomarebu"]
-
-httpauth = Twitter::HTTPAuth.new(config["login"], config["password"])
+httpauth = Twitter::HTTPAuth.new(*config.values_at("login", "password"))
 client = Twitter::Base.new(httpauth)
 
-s = File.read(File.join(File.dirname(__FILE__), "sake.txt")).split
-client.update(s[rand(s.size)])
+s = File.read(File.expand_path("../sake.txt", __FILE__)).split
+client.update(s.choice)
