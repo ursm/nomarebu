@@ -1,15 +1,23 @@
 --- 
-hash: 110833b8d9fb1d59874c4ee61637943008d1d656
+dependencies: 
+  twitter: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- crack: 
+    version: 0.1.6
+- hashie: 
+    version: 0.2.1
+- httparty: 
+    version: 0.5.2
+- oauth: 
+    version: 0.4.1
+- yajl-ruby: 
+    version: 0.7.7
+- twitter: 
+    version: 0.9.8
+hash: 5c89b33c903b59650ac9f48ee79e8c6a1911b89d
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
-specs: 
-- json: 
-    version: 1.4.3
-- twitter4r: 
-    version: 0.3.2
-dependencies: 
-  twitter4r: 
-    version: ">= 0"
-    group: 
-    - :default
